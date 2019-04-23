@@ -75,18 +75,18 @@ window.app = {
     initMap: function () {
         //  Buat Peta
         this.map = new google.maps.Map(document.getElementById('petalokasi'), {
-            mapTypeId: google.maps.MapTypeId.HYBRID,
+            mapTypeId: google.maps.MapTypeId.TERRAIN,
             zoom: 16,
             center: {
-                lat: -2.442686720458634, 
-                lng: 115.24281005552984
+                lat: 17.700100, 
+                lng: 83.200833
             }
         });
 
         //  Buat marker
         this.markerAyat = new Marker({
             map: this.map,
-            position: { lat: -2.442974, lng: 115.239986 },
+            position: { lat: 17.70010, lng: 83.2008333},
             icon: {
                 path: MAP_PIN,
                 fillColor: '#f86191',
@@ -94,11 +94,11 @@ window.app = {
                 strokeColor: '',
                 strokeWeight: 0
             },
-            map_icon_label: '<div class="fa fa-heart mapmarker-icon"><div class="maplabel">Mempelai Pria</div></div>'
+            map_icon_label: '<div class="fa fa-heart mapmarker-icon"><div class="maplabel">Sagar weds Suguna</div></div>'
         });
         this.markerMawad = new Marker({
             map: this.map,
-            position: { lat: -2.444385, lng: 115.244033 },
+            position: {lat: 17.70010, lng: 83.2008333},
             icon: {
                 path: MAP_PIN,
                 fillColor: '#f86191',
@@ -106,21 +106,13 @@ window.app = {
                 strokeColor: '',
                 strokeWeight: 0
             },
-            map_icon_label: '<div class="fa fa-heart mapmarker-icon"><div class="maplabel">Mempelai Wanita</div></div>'
+            map_icon_label: '<div class="fa fa-heart mapmarker-icon"><div class="maplabel">Sagar weds Suguna</div></div>'
         });
 
         //  Window Informasi
         this.mapInfoContent = {
-            ayat: `<div class="petalokasi-info">
-                <div class="judul">Mempelai Pria</div>
-                <div class="isi">
-                    <button type="button" class="btn btn-secondary btn-kecil mb-2" onclick="app.mapResetZoomPan()"><i class="fa fa-undo mr-3"></i>Ke Posisi Awal</button>
-                    <button type="button" class="btn btn-secondary btn-kecil mb-2" onclick="app.mapZoomPan(${ this.markerAyat.position.lat() },${ this.markerAyat.position.lng() })"><i class="fa fa-search-plus mr-3"></i>Lihat Lebih Dekat</button>
-                    <a href="https://www.google.com/maps?t=h&daddr=${ this.markerAyat.position.lat() },${ this.markerAyat.position.lng() }" target="_blank" class="btn btn-success btn-kecil"><i class="fa fa-map mr-3"></i>Buka di Google Map</a>
-                </div>
-            </div>`,
             mawad: `<div class="petalokasi-info">
-                <div class="judul">Mempelai Wanita</div>
+                <div class="judul">Wedding Venue</div>
                 <div class="isi">
                     <button type="button" class="btn btn-secondary btn-kecil mb-2" onclick="app.mapResetZoomPan()"><i class="fa fa-undo mr-3"></i>Ke Posisi Awal</button>
                     <button type="button" class="btn btn-secondary btn-kecil mb-2" onclick="app.mapZoomPan(${ this.markerMawad.position.lat() },${ this.markerMawad.position.lng() })"><i class="fa fa-search-plus mr-3"></i>Lihat Lebih Dekat</button>
@@ -137,10 +129,10 @@ window.app = {
             this.mapInfo.setContent(this.mapInfoContent.ayat);
             this.mapInfo.open(this.map, this.markerAyat);
         });
-        this.markerMawad.addListener('click', () => {
+        /* this.markerMawad.addListener('click', () => {
             this.mapInfo.setContent(this.mapInfoContent.mawad);
             this.mapInfo.open(this.map, this.markerMawad);
-        });
+        }); */
     },
     mapZoomPan: function (lat, lng) {
         this.map.setZoom(20);
@@ -150,8 +142,8 @@ window.app = {
     mapResetZoomPan: function () {
         this.map.setZoom(16);
         window.setTimeout(() => this.map.panTo({
-            lat: -2.442686720458634, 
-            lng: 115.24281005552984
+            lat: 17.70010, 
+            lng: 83.2008333
         }), 1);
         this.mapInfo.close();
     },
@@ -178,7 +170,7 @@ window.app = {
         this.initParallax();
 
         //  Buat hitung mundur
-        this.makeCountDown('27-06-2018');
+        this.makeCountDown('25-05-2019');
 
         //  Init Peta
         this.initMap();
