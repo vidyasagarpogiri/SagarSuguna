@@ -170,7 +170,7 @@ window.app = {
         this.initParallax();
 
         //  Buat hitung mundur
-        this.makeCountDown('24-05-2019');
+        this.makeCountDown('26-05-2019');
 
         //  Init Peta
         this.initMap();
